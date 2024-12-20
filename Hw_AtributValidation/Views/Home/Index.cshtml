@@ -1,0 +1,35 @@
+﻿@model Person
+
+<div>
+	<h1 class="display-4">User Registraion</h1>
+	<form method="post">
+		<div asp-validation-summary="ModelOnly"></div>
+
+		<div class="form-group">
+			<label asp-for="TermsOfService" class="control-label"></label>
+			<input asp-for="TermsOfService"/>
+		</div>
+
+		<div class="form-control">
+			<label asp-for="CreditNumber" class="control-label"></label>
+			<input asp-for="CreditNumber" class="form-control"/>
+			<span asp-validation-for="CreditNumber" class="text-danger"></span>
+		</div>
+
+		<div class="form-control">
+			<label asp-for="Password" class="control-label"></label>
+			<input asp-for="Password" class="form-Control" />
+			<span asp-validation-for="Password" class="text-danger"></span>
+		</div>
+
+		<div class="form-control">
+			<label asp-for="ConfirmPassword" class="control-label"></label>
+			<input asp-for="ConfirmPassword" class="form-control"/>
+			<span asp-validation-for="Password" class="text-danger"></span>
+		</div>
+	</form>
+</div>
+
+@section Scripts{
+	@await Html.PartialAsync("_ValidationScriptsPartial")
+}
